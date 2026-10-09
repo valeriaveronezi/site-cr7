@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR7 - A Trajetória Lendária de Cristiano Ronaldo</title>
+    <style>
+    /* Configuração Geral do Site e Tipografia */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0c0c0c;
+        color: #f5f5f5;
+        line-height: 1.8;
+    }
+
+    /* Topo do Site (Menu Superior Fixo) */
+    header {
+        background-color: #141414;
+        border-bottom: 3px solid #e5b80b; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #e5b80b;
+    }
+
+    header h1 {
+        color: #e5b80b;
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #e5b80b;
+    }
+
+    /* Seção Principal (Hero Banner) */
+    .hero-section {
+        position: relative;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .hero-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        z-index: 1;
+        opacity: 0.25; 
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 20px;
+        max-width: 850px;
+    }
+
+    .hero-content h2 {
+        font-size: 3.5rem;
+        color: #e5b80b;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+        color: #ffffff;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    }
+
+    .btn-functional {
+        display: inline-block;
+        background-color: #e5b80b;
+        color: #0c0c0c;
+        padding: 14px 35px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 15px rgba(229, 184, 11, 0.2);
+    }
+
+    .btn-functional:hover {
+        background-color: #ffffff;
+        color: #0c0c0c;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Estrutura das Seções de Conteúdo Acadêmico */
+    main {
+        padding: 60px 20px;
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    section {
+        background-color: #141414;
+        margin-bottom: 40px;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        border-left: 4px solid #333;
+        transition: border-color 0.3s;
+    }
+
+    section:hover {
+        border-left-color: #e5b80b; 
+    }
+
+    section h2 {
+        color: #e5b80b;
+        margin-top: 0;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border-bottom: 2px solid #222;
+        padding-bottom: 12px;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    section p {
+        text-align: justify;
+        margin-bottom: 20px;
+        color: #cccccc;
+        font-size: 1.1rem;
+    }
+
+    /* Box inteligente que impede cortes */
+    .img-box {
+        width: 100%;
+        max-height: 480px;
+        margin: 0 auto 25px auto;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid #222;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        background-color: #181818;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-box img {
+        max-width: 100%;
+        max-height: 480px;
+        display: block;
+        object-fit: contain; 
+    }
+
+    /* Estilização da Tabela de Dados */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 1rem;
+    }
+
+    .data-table th, .data-table td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .data-table th {
+        background-color: #1e1e1e;
+        color: #e5b80b;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #e5b80b;
+    }
+
+    .data-table tr {
+        border-bottom: 1px solid #222;
+    }
+
+    .data-table tr:nth-child(even) {
+        background-color: #181818;
+    }
+
+    /* Listas Customizadas de Recordes */
+    .records-list {
+        list-style: none;
+        margin: 20px 0;
+    }
+
+    .records-list li {
+        margin-bottom: 12px;
+        padding-left: 30px;
+        position: relative;
+        font-size: 1.1rem;
+    }
+
+    .records-list li::before {
+        content: "⚡";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #e5b80b;
+    }
+
+    /* Rodapé */
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #0a0a0a;
+        color: #666666;
+        border-top: 2px solid #1a1a1a;
+        font-size: 0.95rem;
+    }
+
+    footer p {
+        margin-bottom: 8px;
+    }
+
+    footer .author {
+        color: #999999;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho limpo com nome CR7 e logotipo da sua pasta -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Oficial CR7" class="logo-img">
+            <h1>CR7</h1>
+        </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#carreira">Carreira</a>
+            <a href="#conquistas">Conquistas</a>
+            <a href="#mentalidade">Mentalidade</a>
+            <a href="#portugal">Portugal</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal puxando do seu banner local -->
+    <section id="hero" class="hero-section">
+        <img src="banner.jpg" alt="Cristiano Ronaldo Imagem de Fundo" class="hero-banner">
+        <div class="hero-content">
+            <h2>Cristiano Ronaldo</h2>
+            <p>A análise cronológica, estatística e cultural do atleta que redefiniu os limites do futebol moderno.</p>
+            <a href="https://youtube.com" target="_blank" class="btn-functional">Acessar Canal Oficial</a>
+        </div>
+    </section>
+
+    <main>
+        
+        <!-- Seção 1: Introdução -->
+        <section id="inicio">
+            <h2>Introdução e Contexto Histórico</h2>
+            <div class="img-box">
+                <img src="cr7-jovem.jpg" alt="Cristiano Ronaldo no início da carreira">
+            </div>
+            <p>
+                Cristiano Ronaldo dos Santos Aveiro, nascido em Funchal, Madeira, em 5 de fevereiro de 1985, é amplamente reconhecido por analistas esportivos como um dos atletas mais completos e dominantes da história do esporte global. Vindo de uma infância humilde, sua trajetória confunde-se com a evolução da própria preparação física e tática no futebol do século XXI.
+            </p>
+            <p>
+                Este projeto visa documentar como a fusão entre valências físicas privilegiadas, refinamento técnico rigoroso e uma mentalidade competitiva sem precedentes transformou um jovem ponta veloz de Portugal no maior artilheiro em jogos oficiais que o mundo já testemunhou.
+            </p>
+        </section>
+
+        <!-- Seção 2: Carreira -->
+        <section id="carreira">
+            <h2>A Evolução nos Clubes Profissionais</h2>
+            <div class="img-box">
+                <!-- MODIFICADO: Agora puxa o seu arquivo físico local da Juventus -->
+                <img src="cr7-juventus.jpg" alt="Cristiano Ronaldo na Juventus">
+            </div>
+            <p>
+                A jornada profissional de Ronaldo iniciou-se nas categorias de base do <strong>Sporting CP</strong>. Contudo, seu verdadeiro impacto global começou em 2003, ao ser contratado pelo <strong>Manchester United</strong> sob a mentoria de Sir Alex Ferguson. Na Inglaterra, herdou a mítica camisa 7 e evoluiu de um jogador focado em dribles para um finalizador letal, conquistando sua primeira UEFA Champions League e sua primeira Bola de Ouro em 2008.
+            </p>
+            <p>
+                Em 2009, o <strong>Real Madrid</strong> o contratou por uma cifra recorde na época. No clube espanhol, Ronaldo atingiu o ápice de sua dinastia esportiva. Foram 450 gols em 438 partidas oficiais — uma média assustadora superior a um gol por jogo. Liderou a equipe na conquista de quatro títulos da Champions League, sendo três deles de forma consecutiva.
+            </p>
+            <p>
+                Posteriormente, buscou novos desafios na <strong>Juventus</strong>, onde conquistou o bicampeonato italiano, teve um breve e marcante retorno ao Manchester United e, atualmente, lidera o projeto de expansion do futebol asiático no <strong>Al-Nassr</strong>, mantendo médias de gols impressionantes mesmo após duas décadas de carreira em alto nível.
+            </p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Clube / Instituição</th>
+                        <th>Período Principal</th>
